@@ -37,6 +37,8 @@ func main() {
 	ctxs := []TypeContext{
 		TypeContext{Name: "Int", GoType: "int"},
 		TypeContext{Name: "String", GoType: "string"},
+		TypeContext{Name: "Float32", GoType: "float32"},
+		TypeContext{Name: "Float64", GoType: "float64"},
 	}
 
 	for _, ctx := range ctxs {

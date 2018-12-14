@@ -31,3 +31,17 @@ func main() {
 
 }
 ```
+
+## Map
+
+## Filter
+
+## Select
+
+## Take
+
+## Any
+
+## All
+
+## Reduce
