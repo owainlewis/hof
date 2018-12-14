@@ -54,6 +54,25 @@ func (s *StringList) Select(f func(string) bool) *StringList {
 	return s
 }
 
+func (s *StringList) Any(f func(string) bool) bool {
+    for _, v := range s.items {
+        if f(v) {
+            return true
+        }
+    }
+    return false
+}
+
+// All returns true if all of the items in the slice satisfy the predicate f.
+func (s *StringList) All(f func(string) bool) bool {
+    for _, v := range s.items {
+        if !f(v) {
+            return false
+        }
+    }
+    return true
+}
+
 // TODO
 
 // Take

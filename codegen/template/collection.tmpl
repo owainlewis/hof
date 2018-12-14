@@ -54,6 +54,25 @@ func (s *{{.Name}}List) Select(f func({{.GoType}}) bool) *{{.Name}}List {
 	return s
 }
 
+func (s *{{.Name}}List) Any(f func({{.GoType}}) bool) bool {
+    for _, v := range s.items {
+        if f(v) {
+            return true
+        }
+    }
+    return false
+}
+
+// All returns true if all of the items in the slice satisfy the predicate f.
+func (s *{{.Name}}List) All(f func({{.GoType}}) bool) bool {
+    for _, v := range s.items {
+        if !f(v) {
+            return false
+        }
+    }
+    return true
+}
+
 // TODO
 
 // Take
