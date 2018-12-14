@@ -1,23 +1,23 @@
 package collections
 
-type IntList struct {
-	items []int
+type StringList struct {
+	items []string
 }
 
 // NewStringList ..
-func NewIntList(items []int) *IntList {
-	return &IntList{
+func NewStringList(items []string) *StringList {
+	return &StringList{
 		items: items,
 	}
 }
 
 // Get returns the underlying type value for this collection.
-func (s *IntList) Get() []int {
+func (s *StringList) Get() []string {
 	return s.items
 }
 
-func (s *IntList) Map(f func(int) int) *IntList {
-	result := []int{}
+func (s *StringList) Map(f func(string) string) *StringList {
+	result := []string{}
 	for _, item := range s.items {
 		result = append(result, f(item))
 	}
@@ -28,8 +28,8 @@ func (s *IntList) Map(f func(int) int) *IntList {
 
 // Filter will remove items from a sequence that match a given
 // predicate function.
-func (s *IntList) Filter(f func(int) bool) *IntList {
-	result := []int{}
+func (s *StringList) Filter(f func(string) bool) *StringList {
+	result := []string{}
 	for _, item := range s.items {
 		if !f(item) {
 			result = append(result, item)
@@ -42,8 +42,8 @@ func (s *IntList) Filter(f func(int) bool) *IntList {
 
 // Select will return items from a sequence that match a given
 // predicate function.
-func (s *IntList) Select(f func(int) bool) *IntList {
-	result := []int{}
+func (s *StringList) Select(f func(string) bool) *StringList {
+	result := []string{}
 	for _, item := range s.items {
 		if f(item) {
 			result = append(result, item)
